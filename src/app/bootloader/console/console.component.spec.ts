@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrintfComponent } from './printf.component';
+import { ConsolefComponent } from './console.component';
 
-describe('PrintfComponent', () => {
-  let component: PrintfComponent;
-  let fixture: ComponentFixture<PrintfComponent>;
+describe('ConsolefComponent', () => {
+  let component: ConsolefComponent;
+  let fixture: ComponentFixture<ConsolefComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrintfComponent ]
+      declarations: [ ConsolefComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PrintfComponent);
+    fixture = TestBed.createComponent(ConsolefComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

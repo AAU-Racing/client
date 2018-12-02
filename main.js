@@ -3,13 +3,19 @@ const path = require('path');
 const url = require('url');
 
 require('dotenv').config();
+require('electron-reload')(__dirname);
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
 
 function createWindow () {
-  win = new BrowserWindow({ width: 800, height: 600 });
+  win = new BrowserWindow({ 
+    width: 800, 
+    height: 600,
+    title: "AAU Racing client",
+    frame: false,
+  });
 
   if (process.env.PROFILE === 'production') {
     win.loadURL(url.format({
@@ -22,6 +28,8 @@ function createWindow () {
     win.loadURL(process.env.HOST);
     win.webContents.openDevTools();
   }
+  
+  win.isResizable(true);
 
   win.on('closed', () => {
     // Dereference the window object

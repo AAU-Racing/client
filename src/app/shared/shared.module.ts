@@ -1,19 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TopbarComponent } from './topbar/topbar.component';
+import { MenubarComponent } from './menubar/menubar.component';
 import { FooterComponent } from './footer/footer.component';
+import { TitlebarComponent } from './titlebar/titlebar.component';
+
+import { MatToolbarModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+
+import { NgxElectronModule } from 'ngx-electron';
 
 @NgModule({
   declarations: [
-    TopbarComponent,
-    FooterComponent
+    MenubarComponent,
+    FooterComponent,
+    TitlebarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgxElectronModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
-    TopbarComponent,
-    FooterComponent
+    MenubarComponent,
+    FooterComponent,
+    TitlebarComponent
   ]
 })
 export class SharedModule { }

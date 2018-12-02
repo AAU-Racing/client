@@ -1,0 +1,41 @@
+@import "../../../theme.scss";
+
+$foreground-palette: map-get($client-app-theme, foreground);
+
+.titlebar {
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+
+    background-color: map-get($client-app-primary, 700);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+        color: white;
+        margin: 10px;
+        font-size: 11px;
+    }
+    
+    .window-controls {
+        margin-right: 5px;
+
+        i {
+            font-size: 8px;
+        }
+
+        button {
+            -webkit-app-region: no-drag;
+            background-color: mat-color($client-app-accent, default);
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            margin: 2px 2px;
+            border-radius: 50%
+        }
+    }
+}
