@@ -27,15 +27,14 @@ $foreground-palette: map-get($client-app-theme, foreground);
         button {
             -webkit-app-region: no-drag;
             background-color: mat-color($client-app-accent, default);
-            border: none;
             color: white;
-            text-align: center;
-            text-decoration: none;
             display: inline-block;
+            box-sizing: border-box;
             height: 20px;
             width: 20px;
-            margin: 2px 2px;
-            border-radius: 50%
+            border-radius: 50%;
+            border: 0px;
+            margin-right: 5px;
         }
     }
 }

@@ -13,18 +13,23 @@ export class TitlebarComponent implements OnInit {
   constructor(private _electronService: ElectronService) { }
 
   ngOnInit() {
-    this.window = this._electronService.remote.BrowserWindow.getFocusedWindow();
+    this.window = this._electronService.remote.BrowserWindow;
   }
 
   minimize() {
-    this.window.minimize();
+    this.window.getFocusedWindow().minimize();
   }
 
   maximize() {
-    this.window.maximize();
+    if (this.window.getFocusedWindow().isMaximized()) {
+      this.window.getFocusedWindow().unmaximize();
+    }
+    else {
+      this.window.getFocusedWindow().maximize();
+    }
   }
 
   close() {
-    this.window.close();
+    this.window.getFocusedWindow().close();
   }
 }
